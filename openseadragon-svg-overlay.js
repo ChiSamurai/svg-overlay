@@ -128,9 +128,8 @@
             // TODO: Expose an accessor for _containerInnerSize in the OSD API so we don't have to use the private variable.
             var scale = this._viewer.viewport.viewportToImageZoom(zoom);
             var rotate = this._viewer.viewport.degrees;
-            var containerSize = {width: parseFloat(this._svg.getAttribute('width')), height: parseFloat(this._svg.getAttribute('height'))};
-            this._node.setAttribute('transform',
-                'rotate(' + rotate +  ', ' + (containerSize.width / 2) + ', ' + (containerSize.height / 2) + ') translate(' + p.x + ',' + p.y + ') scale(' + scale + ')');
+            this._node.setAttribute('transform', 
+                'translate(' + p.x + ',' + p.y + ')  rotate(' + rotate +  ', 0, 0) scale(' + scale + ')');
 
             
             this._translate = {x: p.x, y: p.y};
